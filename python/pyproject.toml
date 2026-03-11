@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.cibuildwheel]
+build = "cp313-*"
+
+[tool.cibuildwheel.linux]
+archs = ["x86_64"]
+before-all = """
+ln -sf /project/c /project/python/lib && \
+rm -rf /project/c/subprojects/kastore && \
+mkdir -p /project/c/subprojects && \
+ln -sf /project/c/subprojects/full-projects/kastore/c /project/c/subprojects/kastore
+"""
