@@ -91,7 +91,7 @@ with open(version_file) as f:
 numpy_ver = "numpy>=1.7"
 
 setup(
-    name="tskit",
+    name="idm_tskit",
     description="The tree sequence toolkit.",
     long_description=long_description,
     url="https://github.com/tskit-dev/tskit",
