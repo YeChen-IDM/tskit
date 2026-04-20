@@ -1,4 +1,5 @@
 # Definitive location for the version number.
 # During development, should be x.y.z.devN
 # For beta should be x.y.zbN
-tskit_version = "0.3.6.dev5"
+
+tskit_version = "0.3.7" # bump from 0.3.6.dev5
