@@ -1,4 +1,44 @@
-# tskit  <img align="right" width="145" height="90" src="https://github.com/tskit-dev/administrative/blob/main/tskit_logo.svg">
+# tskit — IDM Fork  <img align="right" width="145" height="90" src="https://github.com/tskit-dev/administrative/blob/main/tskit_logo.svg">
+
+> **This is an [Institute for Disease Modeling](https://www.idmod.org/) / [Bill & Melinda Gates Foundation](https://www.gatesfoundation.org/) fork of [tskit](https://github.com/tskit-dev/tskit).**
+> It publishes as **`idm_tskit`** on PyPI and adds the `idm` package for high-performance IBD/IBS genome similarity calculations.
+
+## IDM Extensions (`idm` package)
+
+The `idm` package extends tskit with SIMD-accelerated (SSE3/AVX2) Identity by Descent (IBD) and Identity by State (IBS) calculations across large populations of genomes.
+
+### Install
+
+```bash
+pip install idm_tskit
+```
+
+### Quick start
+
+```python
+import tskit, idm
+
+ts = tskit.load("tree-sequence.ts")
+
+# Extract genome data from the tree sequence
+genomes, lengths = idm.get_genomes(ts)
+
+# IBD: similarity by shared ancestral root (pass intervals)
+ibd = idm.IbxResults(genomes, intervals=lengths)
+score = ibd[genome_a, genome_b]          # raw base-pair overlap
+normalized = score / lengths.sum()       # fraction in [0, 1]
+
+# IBS: similarity by matching alleles (omit intervals)
+ibs = idm.IbxResults(genomes)
+score = ibs[genome_a, genome_b]          # raw site count
+normalized = score / genomes.shape[1]   # fraction in [0, 1]
+```
+
+For a subset of genomes, pass `indices=np.asarray(ids, dtype=np.uint32)` to reduce computation and memory.
+
+See [IDMEXT.md](IDMEXT.md) for detailed documentation, worked examples, and a description of the SHA256-based deduplication optimization that avoids O(N²) comparisons when clonal genomes are common.
+
+---
 
 [![License](https://img.shields.io/github/license/tskit-dev/tskit)](https://github.com/tskit-dev/tskit/blob/main/LICENSE)
 [![Contributors](https://img.shields.io/github/contributors/tskit-dev/tskit)](https://github.com/tskit-dev/tskit/graphs/contributors)
