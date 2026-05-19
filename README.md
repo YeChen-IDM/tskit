@@ -3,10 +3,6 @@
 > **This is an [Institute for Disease Modeling](https://www.idmod.org/) / [Bill & Melinda Gates Foundation](https://www.gatesfoundation.org/) fork of [tskit](https://github.com/tskit-dev/tskit).**
 > It publishes as **`idm_tskit`** on PyPI and adds the `idm` package for high-performance IBD/IBS genome similarity calculations.
 
-## IDM Extensions (`idm` package)
-
-The `idm` package extends tskit with SIMD-accelerated (SSE3/AVX2) Identity by Descent (IBD) and Identity by State (IBS) calculations across large populations of genomes.
-
 ## Project status
 
 EMOD-Hub projects are provided as open source software under the MIT License for
@@ -18,6 +14,10 @@ by IDM or the Gates Foundation.**
 Community contributions are welcome, and trusted collaborators may review and
 merge pull requests, but no guarantees are made regarding support, pull request
 review, security response, maintenance, or release timelines.
+
+## IDM Extensions (`idm` package)
+
+The `idm` package extends tskit with SIMD-accelerated (SSE3/AVX2) Identity by Descent (IBD) and Identity by State (IBS) calculations across large populations of genomes.
 
 ### Install
 
