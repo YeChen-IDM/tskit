@@ -3,6 +3,18 @@
 > **This is an [Institute for Disease Modeling](https://www.idmod.org/) / [Bill & Melinda Gates Foundation](https://www.gatesfoundation.org/) fork of [tskit](https://github.com/tskit-dev/tskit).**
 > It publishes as **`idm_tskit`** on PyPI and adds the `idm` package for high-performance IBD/IBS genome similarity calculations.
 
+## Project status
+
+EMOD-Hub projects are provided as open source software under the MIT License for
+community use, research, and development.
+
+**Unless otherwise noted, these projects are no longer actively maintained or supported
+by IDM or the Gates Foundation.**
+
+Community contributions are welcome, and trusted collaborators may review and
+merge pull requests, but no guarantees are made regarding support, pull request
+review, security response, maintenance, or release timelines.
+
 ## IDM Extensions (`idm` package)
 
 The `idm` package extends tskit with SIMD-accelerated (SSE3/AVX2) Identity by Descent (IBD) and Identity by State (IBS) calculations across large populations of genomes.
@@ -70,9 +82,12 @@ Most users of `tskit` will use the python API as it provides a convenient, high-
 The `tskit` C API provides comprehensive, low-level methods for manipulating and processing tree-sequences. Written to the C99 standard and fully thread-safe, it can be used with either C or C++. Full documentation is [here](https://tskit.readthedocs.io/en/latest/c-api.html).
 
 
-Disclaimer
-----------
-The code in this repository was developed by IDM and other collaborators to support our joint research on flexible agent-based modeling.
- We've made it publicly available under the MIT License to provide others with a better understanding of our research and an opportunity to build upon it for 
- their own work. We make no representations that the code works as intended or that we will provide support, address issues that are found, or accept pull requests.
- You are welcome to create your own fork and modify the code to suit your own modeling needs as permitted under the MIT License.
+## Disclaimer
+
+The code in this repository was developed by IDM and other collaborators to support our
+joint research on flexible agent-based modeling. We've made it publicly available under
+the MIT License to provide others with a better understanding of our research and an
+opportunity to build upon it for their own work. We make no representations that the code
+works as intended or that we will provide support, address issues that are found, or accept
+pull requests. You are welcome to create your own fork and modify the code to suit your own
+modeling needs as permitted under the MIT License.
